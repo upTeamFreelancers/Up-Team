@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap');
+* {
+    box-sizing: border-box;
+    font-family: 'Nunito Sans';
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+.cl1 {
+    width: 40%;
+    height: 100vh;
+    float: left;
+    background: linear-gradient(#0000ff, #6b6bff, #0000ff);
+}
+.text {
+    text-align: center;
+    color: #fff;
+}
+.text > h1 {
+    font-size: 60px;
+    line-height: 60px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+.logo {
+    display: flex;
+    justify-content: center;
+}
+.logo > img {
+    width: 350px;
+    border-radius: 50%;
+}
+.clogo {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+.clogo > h1 {
+    font-size: 10px;
+    margin-top: 15%;
+    text-transform: uppercase;
+
+}
+.cl2 {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.title {
+    text-align: center;
+    margin: 2%;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+
+}
+.form {
+    width: 100%;
+}
+.f_input {
+    width: 80%;
+    margin-bottom: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 50px;
+    font-size: 20px;
+    padding: 0 3%;
+    color: #000;
+    border: 2px solid #686868;
+    border-radius: 5px;
+    outline: none;
+}
+.form > button {
+    width: 80%;
+    height: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 20px;
+    border: 2px solid rgb(100, 100, 253);
+    border-radius: 5px;
+    background-color: rgb(100, 100, 253);
+    color: #fff;
+    cursor: pointer;
+}
+.form > button:hover {
+    border: 2px solid #4f4f4f;
+}
+@media (max-width: 1400px) {
+    .text > h1 {
+        font-size: 40px;
+        line-height: 40px;
+    }
+}
+@media (max-width: 990px) {
+    .text {
+        margin-top: 10%;
+    }
+    .text > h1 {
+        font-size: 30px;
+        line-height: 30px;
+        letter-spacing: 7px;
+    }
+    .logo {
+        margin-top: 15%;
+    }
+    .logo > img {
+        width: 250px;
+    }
+    .clogo > h1 {
+        margin-top: 35%;
+    }
+    .title {
+        font-size: 25px;
+    }
+    .f_input {
+        margin-bottom: 2%;
+        font-size: 15px;
+    }
+    .form > button {
+        font-size: 17px;
+    }
+}
+@media (max-width: 850px) {
+    .text {
+        margin-top: 10%;
+    }
+    .text > h1 {
+        font-size: 25px;
+        line-height: 30px;
+        letter-spacing: 7px;
+    }
+    .logo {
+        margin-top: 15%;
+    }
+    .logo > img {
+        width: 225px;
+    }
+    .clogo > h1 {
+        margin-top: 55%;
+    }
+    .title {
+        font-size: 25px;
+    }
+    .f_input {
+        margin-bottom: 2%;
+        font-size: 15px;
+    }
+    .form > button {
+        font-size: 17px;
+    }
+}
+@media (max-width: 750px) {
+    .cl1 {
+        display: none;
+    }
+    .cl2 {
+        width: 100%;
+    }
+    .title {
+        font-size: 20px;
+        letter-spacing: 3px;
+    }
+    .f_input {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-bottom: 2%;
+        font-size: 20px;
+    }
+    .form > button {
+        font-size: 17px;
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
+@media (max-width: 640px) {
+    .title {
+        font-size: 25px;
+    }
+    .f_input {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-bottom: 2%;
+        font-size: 20px;
+    }
+    .form > button {
+        font-size: 17px;
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
+@media (max-width: 560px) {
+    .cl2 {
+        height: 85vh;
+    }
+    .title {
+        font-size: 20px;
+    }
+    .f_input {
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-bottom: 3%;
+        font-size: 20px;
+    }
+    .form > button {
+        font-size: 17px;
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+@media (max-width: 560px) {
+    .title {
+        font-size: 17px;
+        margin-bottom: 10%;
+    }
+    .f_input {
+        margin-bottom: 4%;
+        font-size: 15px;
+        height: 40px;
+    }
+    .form > button {
+        font-size: 17px;
+        height: 40px;
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-top: 10%;
+    }
+}
+@media (min-width: 1600px) {
+    .cl1 {
+        background: linear-gradient(#0000ff, #0000ff, #6b6bff, #0000ff, #0000ff);
+    }
+    .f_input {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    .form > button {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
+
+
+/* Prepared by Habibulloh */
