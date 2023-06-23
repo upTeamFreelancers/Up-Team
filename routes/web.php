@@ -50,6 +50,9 @@ Route::post('/addprosave', 'HomeController@addprosave');
 Route::get('/dtea/{id}', 'HomeController@dtea');
 Route::get('/dmes/{id}', 'HomeController@dmes');
 Route::get('/dpro/{id}', 'HomeController@dpro');
+Route::get('/dtea/{id}', 'HomeController@dtea');
+Route::get('/dmes/{id}', 'HomeController@dmes');
+Route::get('/dpro/{id}', 'HomeController@dpro');
 
 // edit view
 Route::get('/etea/{id}', 'HomeController@etea');
