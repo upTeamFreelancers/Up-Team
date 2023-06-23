@@ -58,6 +58,8 @@ Route::get('/epro/{id}', 'HomeController@epro');
 // edit save
 Route::post('/editteasave/{id}', 'HomeController@editteasave');
 Route::post('/editprosave/{id}', 'HomeController@editprosave');
+Route::post('/editteasave/{id}', 'HomeController@editteasave');
+Route::post('/editprosave/{id}', 'HomeController@editprosave');
  // other
 Route::get('/read/{id}', 'HomeController@read');
 Route::get('/{message}', function () {
