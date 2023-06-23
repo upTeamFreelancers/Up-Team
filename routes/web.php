@@ -45,6 +45,9 @@ Route::get('/title', 'HomeController@title');
 Route::post('/addteasave', 'HomeController@addteasave');
 Route::post('/sendmes', 'MessageController@addmes');
 Route::post('/addprosave', 'HomeController@addprosave');
+Route::post('/addteasave', 'HomeController@addteasave');
+Route::post('/sendmes', 'MessageController@addmes');
+Route::post('/addprosave', 'HomeController@addprosave');
 
 // delete
 Route::get('/dtea/{id}', 'HomeController@dtea');
