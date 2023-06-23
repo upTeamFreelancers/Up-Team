@@ -45,9 +45,6 @@ Route::get('/title', 'HomeController@title');
 Route::post('/addteasave', 'HomeController@addteasave');
 Route::post('/sendmes', 'MessageController@addmes');
 Route::post('/addprosave', 'HomeController@addprosave');
-Route::post('/addteasave', 'HomeController@addteasave');
-Route::post('/sendmes', 'MessageController@addmes');
-Route::post('/addprosave', 'HomeController@addprosave');
 
 // delete
 Route::get('/dtea/{id}', 'HomeController@dtea');
@@ -59,8 +56,6 @@ Route::get('/etea/{id}', 'HomeController@etea');
 Route::get('/epro/{id}', 'HomeController@epro');
 
 // edit save
-Route::post('/editteasave/{id}', 'HomeController@editteasave');
-Route::post('/editprosave/{id}', 'HomeController@editprosave');
 Route::post('/editteasave/{id}', 'HomeController@editteasave');
 Route::post('/editprosave/{id}', 'HomeController@editprosave');
  // other
