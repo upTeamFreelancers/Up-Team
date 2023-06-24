@@ -337,37 +337,39 @@
                     <div class="col-lg-4">
 
                         <div class="info-container d-flex flex-column align-items-center justify-content-center">
-                            <div class="info-item d-flex">
-                                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                                <div>
-                                    <h4>Location:</h4>
-                                    <p>Jizzakh city, Chashmasoy street, 11 - house</p>
-                                </div>
-                            </div><!-- End Info Item -->
+                            @foreach ($dat as $d)
+                                <div class="info-item d-flex">
+                                    <i class="bi bi-geo-alt flex-shrink-0"></i>
+                                    <div>
+                                        <h4>Location:</h4>
+                                        <p>{{$d->location}}</p>
+                                    </div>
+                                </div><!-- End Info Item -->
 
-                            <div class="info-item d-flex">
-                                <i class="bi bi-envelope flex-shrink-0"></i>
-                                <div>
-                                    <h4>Email:</h4>
-                                    <p>husanovhabibullohhusanov@gmail.com</p>
-                                </div>
-                            </div><!-- End Info Item -->
+                                <div class="info-item d-flex">
+                                    <i class="bi bi-envelope flex-shrink-0"></i>
+                                    <div>
+                                        <h4>Email:</h4>
+                                        <p>{{$d->email}}</p>
+                                    </div>
+                                </div><!-- End Info Item -->
 
-                            <div class="info-item d-flex">
-                                <i class="bi bi-phone flex-shrink-0"></i>
-                                <div>
-                                    <h4>Call:</h4>
-                                    <p>+998904932407</p>
-                                </div>
-                            </div><!-- End Info Item -->
+                                <div class="info-item d-flex">
+                                    <i class="bi bi-phone flex-shrink-0"></i>
+                                    <div>
+                                        <h4>Call:</h4>
+                                        <p>{{$d->call}}</p>
+                                    </div>
+                                </div><!-- End Info Item -->
 
-                            <div class="info-item d-flex">
-                                <i class="bi bi-clock flex-shrink-0"></i>
-                                <div>
-                                    <h4>Open Hours:</h4>
-                                    <p>Mon-Sun: 10AM - 24PM</p>
-                                </div>
-                            </div><!-- End Info Item -->
+                                <div class="info-item d-flex">
+                                    <i class="bi bi-clock flex-shrink-0"></i>
+                                    <div>
+                                        <h4>Open Hours:</h4>
+                                        <p>{{$d->online}}</p>
+                                    </div>
+                                </div><!-- End Info Item -->
+                            @endforeach
                         </div>
 
                     </div>

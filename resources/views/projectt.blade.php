@@ -80,6 +80,12 @@
                                 <span class="hide-menu">Team</span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/data" aria-expanded="false">
+                                <i class="fa fa-paperclip"></i>
+                                <span class="hide-menu">data</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>

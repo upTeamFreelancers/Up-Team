@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Team;
 use App\Message;
 use App\Project;
-
+use App\data;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,12 +20,14 @@ use App\Project;
 Route::get('/', function () {
     $tea = Team::paginate(4);
     $pro = Project::paginate(3);
+    $dat = data::paginate(1);
     $ctea = Team::count();
     $cmes = Message::count();
     $cpro = Project::count();
     return view('welcome', [
         'tea' => $tea,
         'pro' => $pro,
+        'dat' => $dat,
         'ctea' => $ctea,
         'cmes' => $cmes,
         'cpro' => $cpro
@@ -40,16 +42,20 @@ Route::get('/teamm', 'HomeController@team');
 Route::get('/message', 'HomeController@message');
 Route::get('/projectt', 'HomeController@projectt');
 Route::get('/title', 'HomeController@title');
+Route::get('/data', 'HomeController@data');
 
 // add save
 Route::post('/addteasave', 'HomeController@addteasave');
 Route::post('/sendmes', 'MessageController@addmes');
 Route::post('/addprosave', 'HomeController@addprosave');
+Route::post('/adddatsave', 'HomeController@adddatsave');
+
 
 // delete
 Route::get('/dtea/{id}', 'HomeController@dtea');
 Route::get('/dmes/{id}', 'HomeController@dmes');
 Route::get('/dpro/{id}', 'HomeController@dpro');
+Route::get('/ddat/{id}', 'HomeController@ddat');
 
 // edit view
 Route::get('/etea/{id}', 'HomeController@etea');
@@ -58,6 +64,7 @@ Route::get('/epro/{id}', 'HomeController@epro');
 // edit save
 Route::post('/editteasave/{id}', 'HomeController@editteasave');
 Route::post('/editprosave/{id}', 'HomeController@editprosave');
+Route::post('/editdatsave/{id}', 'HomeController@editdatsave');
  // other
 Route::get('/read/{id}', 'HomeController@read');
 Route::get('/{message}', function () {

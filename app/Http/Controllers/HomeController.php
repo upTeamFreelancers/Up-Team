@@ -8,7 +8,7 @@ use App\Team;
 use App\Message;
 use App\Project;
 use App\Title;
-
+use App\data;
 class HomeController extends Controller
 {
     /**
@@ -32,10 +32,12 @@ class HomeController extends Controller
         $ctea = Team::count();
         $cmes = Message::count();
         $cpro = Project::count();
+        $cdat = Project::count();
         return view('home', [
             'ctea' => $ctea,
             'cmes' => $cmes,
-            'cpro' => $cpro
+            'cpro' => $cpro,
+            'cdat' => $cdat
         ]);
     }
     public function team()
@@ -64,6 +66,13 @@ class HomeController extends Controller
         $tit = Title::all();
         return view('title', [
             'tit' => $tit
+        ]);
+    }
+    public function data()
+    {
+        $data = data::all();
+        return view('data', [
+            'data' => $data
         ]);
     }
     // add view
@@ -95,6 +104,17 @@ class HomeController extends Controller
         $new->save();
         return redirect('projectt');
     }
+    public function adddatsave(Request $request)
+    {
+        $new = new data();
+        $new->location = $_POST['location'];
+        $new->email = $_POST['email'];
+        $new->call = $_POST['call'];
+        $new->online = $_POST['online'];
+        $new->save();
+        return back();
+
+    }
     // edit view
     public function etea($id)
     {
@@ -112,6 +132,12 @@ class HomeController extends Controller
         return view('edit', [
             'get' => $get,
             'type' => $type
+        ]);
+    }
+    public function edat($id){
+        $get = data::where('id',$id)->first();
+        return view ('editData', [
+            'get' => $get
         ]);
     }
     // edit save
@@ -142,6 +168,16 @@ class HomeController extends Controller
         ]);
         return redirect('teamm');
     }
+    public function editdatsave(Request $request ,$id)
+    {
+        data::where('id',$id)->update([
+            'location'=>$request->location,
+            'email'=>$request->email,
+            'call'=>$request->call,
+            'online'=>$request->online
+        ]);
+        return redirect('data');
+    }
     // delete
     public function dtea($id)
     {
@@ -164,6 +200,11 @@ class HomeController extends Controller
         Message::where('id', $id)->update([
             'read'=>1
         ]);
+        return back();
+    }
+    public function ddat ($id)
+    {
+        data::where('id',$id)->delete();
         return back();
     }
 }
