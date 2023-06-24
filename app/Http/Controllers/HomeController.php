@@ -70,7 +70,7 @@ class HomeController extends Controller
     }
     public function data()
     {
-        $data = data::all();
+        $data = data::paginate(1);
         return view('data', [
             'data' => $data
         ]);
