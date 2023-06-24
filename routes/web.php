@@ -58,11 +58,7 @@ Route::post('/addprosave', 'HomeController@addprosave');
 Route::post('/adddatsave', 'HomeController@adddatsave');
 Route::post('/addabosave', 'HomeController@addabosave');
 Route::post('/start', 'HomeController@start');
-<<<<<<< HEAD
 
-
-=======
->>>>>>> origin
 // delete
 Route::get('/dabo/{id}', 'HomeController@dabo');
 Route::get('/dtea/{id}', 'HomeController@dtea');
