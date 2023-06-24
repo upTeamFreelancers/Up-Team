@@ -1,0 +1,2 @@
+Durbek buni ko'rsang data dagi ma'lumotlarni yoz
+http://127.0.0.1:8000/title ga kirib start bosiladi

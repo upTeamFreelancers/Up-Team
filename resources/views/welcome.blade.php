@@ -3,7 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Up team</title>
+    <title>
+        @foreach($tit as $ti)
+            {{$ti->title}}
+        @endforeach
+    </title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <link href="assets/img/favicon.png" rel="icon">
@@ -22,7 +26,11 @@
     <header id="header" class="header d-flex align-items-center">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo d-flex align-items-center">
-                <h1>Up team<span>.</span></h1>
+                <h1>
+                    @foreach($tit as $ti)
+                        {{$ti->title}}
+                    @endforeach
+                    <span>.</span></h1>
             </a>
             <nav id="navbar" class="navbar">
                 <ul>
@@ -59,7 +67,11 @@
         <div class="container position-relative">
             <div class="row gy-5" data-aos="fade-in">
                 <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
-                    <h2>Welcome to <span>Up team</span></h2>
+                    <h2>Welcome to <span>
+                        @foreach($tit as $ti)
+                            {{$ti->title}}
+                        @endforeach
+                    </span></h2>
                     <p>We are a group of web developers</p>
                     <div class="d-flex justify-content-center justify-content-lg-start">
                         <a href="#contact" class="btn-get-started">Get Started</a>

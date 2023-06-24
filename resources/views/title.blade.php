@@ -107,11 +107,23 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12">
                         <div class="white-box">
+                            <form action="/start" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input type="text" name="title" value="Up team" hidden>
+                                <button class="btn btn-primary m-2">Start</button>
+                            </form>
                             <h3 class="box-title">Web site title: <span>
                                 @foreach($tit as $ti)
                                     {{$ti->title}}
                                 @endforeach
                             </span></h3>
+                            @foreach($tit as $ti)
+                            <form action="/titup/{{$ti->id}}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input type="text" class="form-control" name="title" value="{{$ti->title}}">
+                                <button class="btn btn-primary m-2">Update</button>
+                            </form>
+                            @endforeach
                         </div>
                     </div>
                 </div>

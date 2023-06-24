@@ -7,6 +7,7 @@ use App\Team;
 use App\Message;
 use App\Project;
 use App\data;
+use App\Title;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +27,7 @@ Route::get('/', function () {
     $ctea = Team::count();
     $cmes = Message::count();
     $cpro = Project::count();
+    $tit = Title::all();
     return view('welcome', [
         'abo' => $abo,
         'tea' => $tea,
@@ -33,6 +35,7 @@ Route::get('/', function () {
         'dat' => $dat,
         'ctea' => $ctea,
         'cmes' => $cmes,
+        'tit' => $tit,
         'cpro' => $cpro
     ]);
 });
@@ -53,7 +56,11 @@ Route::post('/addteasave', 'HomeController@addteasave');
 Route::post('/sendmes', 'MessageController@addmes');
 Route::post('/addprosave', 'HomeController@addprosave');
 Route::post('/adddatsave', 'HomeController@adddatsave');
+<<<<<<< HEAD
 Route::post('/addabosave', 'HomeController@addabosave');
+=======
+Route::post('/start', 'HomeController@start');
+>>>>>>> origin
 
 
 // delete
@@ -72,6 +79,7 @@ Route::post('/editabosave/{id}', 'HomeController@editabosave');
 Route::post('/editteasave/{id}', 'HomeController@editteasave');
 Route::post('/editprosave/{id}', 'HomeController@editprosave');
 Route::post('/editdatsave/{id}', 'HomeController@editdatsave');
+Route::post('/titup/{id}', 'HomeController@titup');
  // other
 Route::get('/read/{id}', 'HomeController@read');
 Route::get('/{message}', function () {

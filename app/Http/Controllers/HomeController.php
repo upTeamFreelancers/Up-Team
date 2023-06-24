@@ -34,10 +34,12 @@ class HomeController extends Controller
         $cmes = Message::count();
         $cpro = Project::count();
         $cdat = Project::count();
+        $tit = Title::all();
         return view('home', [
             'ctea' => $ctea,
             'cmes' => $cmes,
             'cpro' => $cpro,
+            'tit' => $tit,
             'cdat' => $cdat
         ]);
     }
@@ -51,35 +53,45 @@ class HomeController extends Controller
     public function team()
     {
         $tea = Team::all();
+        $tit = Title::all();
         return view('teamm', [
+            'tit' => $tit,
             'tea' => $tea
         ]);
     }
     public function message()
     {
         $mes = Message::all();
+        $tit = Title::all();
         return view('message', [
+            'tit' => $tit,
             'mes' => $mes
         ]);
     }
     public function projectt()
     {
         $pro = Project::all();
+        $tit = Title::all();
         return view('projectt', [
+            'tit' => $tit,
             'pro' => $pro
         ]);
     }
     public function title()
     {
         $tit = Title::all();
+        $ctit = Title::count();
         return view('title', [
-            'tit' => $tit
+            'tit' => $tit,
+            'ctit' => $ctit
         ]);
     }
     public function data()
     {
+        $tit = Title::all();
         $data = data::paginate(1);
         return view('data', [
+            'tit' => $tit,
             'data' => $data
         ]);
     }
@@ -140,6 +152,14 @@ class HomeController extends Controller
         $new->online = $_POST['online'];
         $new->save();
         return back();
+
+    }
+    public function start(Request $request)
+    {
+        $new = new Title();
+        $new->title = $_POST['title'];
+        $new->save();
+        return redirect('home');
 
     }
     // edit view
@@ -222,6 +242,13 @@ class HomeController extends Controller
             'online'=>$request->online
         ]);
         return redirect('data');
+    }
+    public function titup(Request $request ,$id)
+    {
+        Title::where('id',$id)->update([
+            'title'=>$request->title
+        ]);
+        return redirect('title');
     }
     // delete
     public function dabo($id)
