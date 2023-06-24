@@ -1,2 +1,14 @@
 Durbek buni ko'rsang data dagi ma'lumotlarni yoz
 http://127.0.0.1:8000/title ga kirib start bosiladi
+
+
+
+
+data informations
+    Jizzakh , Jizzakh city Hokimyat
+
+    upteamfreelancer@gmail.com
+
+    +998910257978
+
+    Mon - Sun 10 A.M 12 P.M

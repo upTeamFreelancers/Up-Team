@@ -56,11 +56,8 @@ Route::post('/addteasave', 'HomeController@addteasave');
 Route::post('/sendmes', 'MessageController@addmes');
 Route::post('/addprosave', 'HomeController@addprosave');
 Route::post('/adddatsave', 'HomeController@adddatsave');
-<<<<<<< HEAD
 Route::post('/addabosave', 'HomeController@addabosave');
-=======
 Route::post('/start', 'HomeController@start');
->>>>>>> origin
 
 
 // delete
