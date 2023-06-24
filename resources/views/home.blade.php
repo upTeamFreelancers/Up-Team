@@ -8,7 +8,11 @@
     <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
     <meta name="description" content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Admin</title>
+    <title>
+        @foreach($tit as $ti)
+            {{$ti->title}}
+        @endforeach
+    </title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.jpg">
     <link href="adminn/plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
@@ -30,7 +34,9 @@
                 <div class="navbar-header" data-logobg="skin6">
                     <a class="navbar-brand" href="/">
                         <span class="logo-text" style="color: #000; font-weight: bold; font-size: 25px;">
-                            Up team
+                            @foreach($tit as $ti)
+                                {{$ti->title}}
+                            @endforeach
                         </span>
                     </a>
                     <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>

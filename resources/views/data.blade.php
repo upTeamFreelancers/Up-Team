@@ -8,7 +8,11 @@
     <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
     <meta name="description" content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Admin</title>
+    <title>
+    @foreach($tit as $ti)
+        {{$ti->title}}
+    @endforeach
+    </title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.jpg">
     <link href="adminn/plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
@@ -30,7 +34,9 @@
                 <div class="navbar-header" data-logobg="skin6">
                     <a class="navbar-brand" href="/">
                         <span class="logo-text" style="color: #000; font-weight: bold; font-size: 25px;">
-                            Up team
+                            @foreach($tit as $ti)
+                                {{$ti->title}}
+                            @endforeach
                         </span>
                     </a>
                     <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
@@ -75,22 +81,23 @@
                                 <span class="hide-menu">Team</span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/data" aria-expanded="false">
+                                <i class="fa fa-paperclip"></i>
+                                <span class="hide-menu">data</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
         </aside>
-        div class="page-wrapper">
         <div class="page-wrapper">
             <div class="container-fluid ">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12">
                         <div class="white-box row">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Data</button>
                             <h3 class="box-title col">Datas</h3>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary col" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Add Data
-                            </button>
-                            <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                 <div class="modal-content">
@@ -110,7 +117,7 @@
                                         </form>
                                     </div>
                                     <div class="modal-footer">
-                                   
+
                                     </div>
                                 </div>
                                 </div>
@@ -141,7 +148,7 @@
                                                     <a href="#" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal{{$d->id}}">
                                                         Edit
                                                     </a>
-                                                    
+
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="editModal{{$d->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog">
@@ -162,11 +169,11 @@
                                                                     <label for="input4" class="col-form-label">online</label>
                                                                     <input type="text" class="form-control" name="online" id="input4" value="{{$d->online}}">
                                                                     <button class="btn btn-primary m-2">Save</button>
-                                                                                        
+
                                                                 </form>
                                                             </div>
                                                             <div class="modal-footer">
-                                                            
+
                                                             </div>
                                                         </div>
                                                         </div>
@@ -183,8 +190,8 @@
             </div>
         </div>
     </div>
-                                    
-        
+
+
     <script src="adminn/plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="adminn/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="adminn/js/app-style-switcher.js"></script>
