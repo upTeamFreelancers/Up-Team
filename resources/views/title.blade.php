@@ -69,6 +69,12 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/about" aria-expanded="false">
+                                <i class="fa fa-inbox" aria-hidden="true"></i></i>
+                                <span class="hide-menu">About</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/message" aria-expanded="false">
                                 <i class='bx bxs-chat' aria-hidden="true"></i>
                                 <span class="hide-menu">Messages</span>
@@ -84,6 +90,12 @@
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/teamm" aria-expanded="false">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <span class="hide-menu">Team</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/data" aria-expanded="false">
+                                <i class="fa fa-paperclip"></i>
+                                <span class="hide-menu">data</span>
                             </a>
                         </li>
                     </ul>

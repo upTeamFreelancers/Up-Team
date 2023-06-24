@@ -73,6 +73,7 @@
     </section>
     <main id="main">
         <section id="about" class="about">
+            @foreach ($abo as $a)
             <div class="container" data-aos="fade-up">
                 <div class="section-header">
                     <h2>About Us</h2>
@@ -80,15 +81,15 @@
                 </div>
                 <div class="row gy-4">
                     <div class="col-lg-6">
-                        <h3>Voluptatem dignissimos provident quasi corporis</h3>
-                        <img src="assets/img/about.jpg" class="img-fluid rounded-4 mb-4" alt="">
-                        <p>Ut fugiat ut sunt quia veniam. Voluptate perferendis perspiciatis quod nisi et. Placeat debitis quia recusandae odit et consequatur voluptatem. Dignissimos pariatur consectetur fugiat voluptas ea.</p>
-                        <p>Temporibus nihil enim deserunt sed ea. Provident sit expedita aut cupiditate nihil vitae quo officia vel. Blanditiis eligendi possimus et in cum. Quidem eos ut sint rem veniam qui. Ut ut repellendus nobis tempore doloribus debitis explicabo similique sit. Accusantium sed ut omnis beatae neque deleniti repellendus.</p>
+                        <h3>{{$a->name}}</h3>
+                        <img src="abouts/{{$a->img}}" class="img-fluid rounded-4 mb-4" alt="">
+                        <p>{{$a->about}}</p>
+                        <p>{{$a->about2}}</p>
                     </div>
                     <div class="col-lg-6">
                         <div class="content ps-0 ps-lg-5">
                             <p class="fst-italic">
-                                We know the following
+                                {{$a->know}}
                             </p>
                             <ul>
                                 <li><i class="bi bi-check-circle-fill"></i>HTML</li>
@@ -99,17 +100,18 @@
                                 <li><i class="bi bi-check-circle-fill"></i>LARAVEL 7</li>
                             </ul>
                             <p>
-                                WE MAINLY WORK ONLINE AT GITHUB
+                                {{$a->work}}
                             </p>
                             <div class="position-relative mt-4">
-                                <img src="assets/img/about-2.jpg" class="img-fluid rounded-4" alt="">
-                                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
+                                <img src="abouts/{{$a->prevyu}}" class="img-fluid rounded-4" alt="">
+                                <a href="{{$a->link}}" class="glightbox play-btn"></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+            @endforeach
+            
         <section id="stats-counter" class="stats-counter">
             <div class="container" data-aos="fade-up">
                 <div class="row gy-4 align-items-center">

@@ -81,6 +81,12 @@
                                 <span class="hide-menu">Team</span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/data" aria-expanded="false">
+                                <i class="fa fa-paperclip"></i>
+                                <span class="hide-menu">data</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -91,26 +97,33 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12">
                         <div class="white-box row">
-                            <h3 class="box-title col">Datas</h3>
+                            <h3 class="box-title col">About</h3>
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary col" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Add Data
+                                Add info
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Data</h1>
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add info</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="adddatsave" method="POST">
+                                        
+                                        <form action="addabosave" method="POST" enctype='multipart/form-data'>
                                             @csrf
-                                            <input type="text" name="location" placeholder="location" class="form-control"> <br>
-                                            <input type="email" name="email" placeholder="email" class="form-control"> <br>
-                                            <input type="text" name="call" placeholder="call number" class="form-control"> <br>
-                                            <input type="text" name="online" placeholder="online " class="form-control"> <br>
+                                            <input type="text" placeholder="name" name="name" class="form-control"><br>
+                                            <label for="image" class="btn btn-primary m-3" id="image_label">Image</label>
+                                            <input type="file" name="img" hidden id="image"><br>
+                                            <input type="text" placeholder="about" name="about" class="form-control"><br>
+                                            <input type="text" placeholder="about2" name="about2" class="form-control"><br>
+                                            <input type="text" placeholder="know" name="know" class="form-control"><br>
+                                            <input type="text" placeholder="work" name="work" class="form-control"><br>
+                                            <label for="prevyu" class="btn btn-primary m-3" id="image_label">Prevyu</label>
+                                            <input type="file" name="prevyu" hidden id="prevyu"><br>
+                                            <input type="text" placeholder="Video link" name="link" class="form-control"><br>
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                             <button type="submit" class="btn btn-primary">Save changes</button>
                                         </form>
@@ -126,23 +139,33 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>location</th>
-                                            <th>Email</th>
-                                            <th>call</th>
-                                            <th>call</th>
+                                            <th>name</th>
+                                            <th>img</th>
+                                            <th>about</th>
+                                            <th>about2</th>
+                                            <th>know</th>
+                                            <th>skills</th>
+                                            <th>work</th>
+                                            <th>prevyu</th>
+                                            <th>link</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    @foreach ($data as $d)
+                                    @foreach ($abo as $d)
                                         <tbody>
                                             <tr>
                                                 <td>{{$d->id}}</td>
-                                                <td>{{$d->location}}</td>
-                                                <td>{{$d->email}}</td>
-                                                <td>{{$d->call}}</td>
-                                                <td>{{$d->online}}</td>
+                                                <td>{{$d->name}}</td>
+                                                <td><img src="abouts/{{$d->img}}" width="300" alt="{{$d->name}}"></td>
+                                                <td>{{$d->about}}</td>
+                                                <td>{{$d->about2}}</td>
+                                                <td>{{$d->know}}</td>
+                                                <td>{{$d->skills}}</td>
+                                                <td>{{$d->work}}</td>
+                                                <td><img src="abouts/{{$d->prevyu}}" width="300" alt="{{$d->name}}"></td>
+                                                <td>{{$d->link}}</td>
                                                 <td>
-                                                    <a href="/ddat/{{$d->id}}" class="btn btn-danger">Delete</a>
+                                                    <a href="/dabo/{{$d->id}}" class="btn btn-danger">Delete</a>
                                                     <!-- Button trigger modal -->
                                                     <a href="#" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal{{$d->id}}">
                                                         Edit
@@ -157,18 +180,20 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <form action="/editdatsave/{{$d->id}}" method="post">
+                                                                <form action="editabosave/{{$d->id}}" method="POST" enctype='multipart/form-data'>
                                                                     @csrf
-                                                                    <label for="input1" class="col-form-label">Location</label>
-                                                                    <input type="text" class="form-control" name="location" id="input1" value="{{$d->location}}">
-                                                                    <label for="input2" class="col-form-label">email</label>
-                                                                    <input type="text" class="form-control" name="email" id="input2" value="{{$d->email}}">
-                                                                    <label for="input3" class="col-form-label">call</label>
-                                                                    <input type="text" class="form-control" name="call" id="input3" value="{{$d->call}}">
-                                                                    <label for="input4" class="col-form-label">online</label>
-                                                                    <input type="text" class="form-control" name="online" id="input4" value="{{$d->online}}">
-                                                                    <button class="btn btn-primary m-2">Save</button>
-                                                                                        
+                                                                    <input type="text" value="{{$d->name}}" name="name" class="form-control"><br>
+                                                                    <label for="img1" class="btn btn-primary m-3" id="img_label">Image</label>
+                                                                    <input type="file" name="img" hidden id="img1"><br>
+                                                                    <input type="text" value="{{$d->about}}" name="about" class="form-control"><br>
+                                                                    <input type="text" value="{{$d->about2}}" name="about2" class="form-control"><br>
+                                                                    <input type="text" value="{{$d->know}}" name="know" class="form-control"><br>
+                                                                    <input type="text" value="{{$d->work}}" name="work" class="form-control"><br>
+                                                                    <label for="img2" class="btn btn-primary m-3" id="">Prevyu</label>
+                                                                    <input type="file" name="prevyu" hidden id="img2"><br>
+                                                                    <input type="text" value="{{$d->link}}" name="link" class="form-control"><br>
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <button type="submit" class="btn btn-primary">Save changes</button>
                                                                 </form>
                                                             </div>
                                                             <div class="modal-footer">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\about;
 use App\Team;
 use App\Message;
 use App\Project;
@@ -38,6 +39,13 @@ class HomeController extends Controller
             'cmes' => $cmes,
             'cpro' => $cpro,
             'cdat' => $cdat
+        ]);
+    }
+    public function about()
+    {
+        $abo = about::all();
+        return view('about', [
+            'abo' => $abo
         ]);
     }
     public function team()
@@ -77,6 +85,25 @@ class HomeController extends Controller
     }
     // add view
     // add save
+    public function addabosave(Request $request)
+    {
+        $new = new about();
+        $new->name = $_POST['name'];
+        $img = time() . '.' . $request->img->getClientOriginalExtension();
+        $request->img->move(public_path('abouts'), $img);
+        $new->img = $img;
+        $new->about = $_POST['about'];
+        $new->about2 = $_POST['about2'];
+        $new->know = $_POST['know'];
+        $new->work = $_POST['work'];
+        $prevyu = time() . '.' . $request->prevyu->getClientOriginalExtension();
+        $request->prevyu->move(public_path('abouts'), $prevyu);
+        $new->prevyu = $prevyu;
+        $new->link = $_POST['link'];
+        $new-> save();
+        return back();
+
+    }
     public function addteasave(Request $request)
     {
         $new = new Team();
@@ -141,6 +168,24 @@ class HomeController extends Controller
         ]);
     }
     // edit save
+    public function editabosave(Request $request, $id)
+    {
+        $img = time() . '.' . $request->img->getClientOriginalExtension();
+        $request->img->move(public_path('abouts'), $img);
+        $prevyu = time() . '.' . $request->prevyu->getClientOriginalExtension();
+        $request->prevyu->move(public_path('abouts'), $prevyu);
+        about::where('id', $id)->update([
+            'name'=>$request->name,
+            'img'=>$img,
+            'about'=>$request->about,
+            'about2'=>$request->about2,
+            'know'=>$request->know,
+            'work'=>$request->work,
+            'prevyu'=>$prevyu,
+            'link'=>$request->link
+        ]);
+        return back();
+    }
     public function editteasave(Request $request, $id)
     {
         $image = time(). '.' .$request->image->getClientOriginalExtension();
@@ -179,6 +224,11 @@ class HomeController extends Controller
         return redirect('data');
     }
     // delete
+    public function dabo($id)
+    {
+        about::where('id', $id)->delete();
+        return back();
+    }
     public function dtea($id)
     {
         Team::where('id', $id)->delete();
