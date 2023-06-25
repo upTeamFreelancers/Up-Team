@@ -20,8 +20,8 @@
     <link href="adminn/css/style.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
-        tbody>tr td img {
-            max-height: 100px;
+        .hidden {
+            display: none;
         }
     </style>
 </head>
@@ -107,12 +107,15 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12">
                         <div class="white-box">
-                            <form action="/start" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <input type="text" name="title" value="Up team" hidden>
-                                <button class="btn btn-primary m-2">Start</button>
-                            </form>
-                            <h3 class="box-title">Web site title: <span>
+                            <p class="c hidden">{{$ctit}}</p>
+                            <div class="start">
+                                <form action="/start" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="text" name="title" value="Up team" hidden>
+                                    <button class="btn btn-primary m-2">Start</button>
+                                </form>
+                            </div>
+                            <h3 class="box-title">Web site title: <span class="title">
                                 @foreach($tit as $ti)
                                     {{$ti->title}}
                                 @endforeach
@@ -141,6 +144,7 @@
     <script src="adminn/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <script src="adminn/js/pages/dashboards/dashboard1.js"></script>
     <script src="assets/vendor/return.js"></script>
+    <script src="assets/vendor/c.js"></script>
 </body>
 
 </html>
