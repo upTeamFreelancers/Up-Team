@@ -1,7 +1,7 @@
 Durbek buni ko'rsang data dagi ma'lumotlarni yoz
 http://127.0.0.1:8000/title ga kirib start bosiladi
 http://127.0.0.1:8000/register bo'limida Alt + R bosilsa register formi chiqadi
-
+a.js b.js lar bazada umuman ma;lumot bo'lmaganda tugmani yoqodi, aksincha bo'lsa o'chiradi
 
 
 
