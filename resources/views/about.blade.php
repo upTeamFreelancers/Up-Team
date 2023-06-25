@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="adminn/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <link href="adminn/css/style.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -98,11 +103,10 @@
                     <div class="col-md-12 col-lg-12 col-sm-12">
                         <div class="white-box row">
                             <h3 class="box-title col">About</h3>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary col" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <p class="hidden ap">{{$cabo}}</p>
+                            <button type="button" class="btn btn-primary col a" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Add info
                             </button>
-                            <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                 <div class="modal-content">
@@ -111,7 +115,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        
+
                                         <form action="addabosave" method="POST" enctype='multipart/form-data'>
                                             @csrf
                                             <input type="text" placeholder="name" name="name" class="form-control"><br>
@@ -127,9 +131,6 @@
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                             <button type="submit" class="btn btn-primary">Save changes</button>
                                         </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                   
                                     </div>
                                 </div>
                                 </div>
@@ -170,7 +171,7 @@
                                                     <a href="#" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal{{$d->id}}">
                                                         Edit
                                                     </a>
-                                                    
+
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="editModal{{$d->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog">
@@ -197,7 +198,7 @@
                                                                 </form>
                                                             </div>
                                                             <div class="modal-footer">
-                                                            
+
                                                             </div>
                                                         </div>
                                                         </div>
@@ -214,8 +215,8 @@
             </div>
         </div>
     </div>
-                                    
-        
+
+
     <script src="adminn/plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="adminn/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="adminn/js/app-style-switcher.js"></script>
@@ -226,6 +227,7 @@
     <script src="adminn/plugins/bower_components/chartist/dist/chartist.min.js"></script>
     <script src="adminn/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <script src="adminn/js/pages/dashboards/dashboard1.js"></script>
+    <script src="assets/vendor/a.js"></script>
 </body>
 
 </html>

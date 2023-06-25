@@ -45,9 +45,11 @@ class HomeController extends Controller
     }
     public function about()
     {
-        $abo = about::all();
+        $abo = about::paginate(1);
+        $cabo = about::count();
         return view('about', [
-            'abo' => $abo
+            'abo' => $abo,
+            'cabo' => $cabo,
         ]);
     }
     public function team()
