@@ -13,3 +13,4 @@ data informations
 
     Mon - Sun 10 A.M 12 P.M
 http://127.0.0.1:8000/title ga kirib start bosiladi
+1234
