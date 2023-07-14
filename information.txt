@@ -13,8 +13,3 @@ data informations
 
     Mon - Sun 10 A.M 12 P.M
 http://127.0.0.1:8000/title ga kirib start bosiladi
-<<<<<<< HEAD
-456
-=======
-1234
->>>>>>> 5bfddd761e11931e03ce4d08103f4f584a554c1d
