@@ -102,7 +102,7 @@
             cursor: pointer;
         }
         .btn:hover {
-            border: 1px solid #000;
+            border: 2px solid #000;
         }
         @media (max-width: 1230px) {
             .cl {
@@ -246,9 +246,9 @@
     <script>
         var form = document.querySelector('.form')
         var txt = /@/
-        var psw = /^[0-9]{4,}$/
-        var inpu = document.querySelector('#input1')
-        var input = document.querySelector('#input2')
+        var psw = /^[0-9]{4,4}$/
+        var input1 = document.querySelector('#input1')
+        var input2 = document.querySelector('#input2')
         function T() {
             if (inpu.value == "" && input.value == "") {
                 alert("The email address and password is empty")
@@ -264,31 +264,31 @@
         function Test1() {
             var inputt = document.getElementById('input1').value
             if (inputt == "") {
-                inpu.setAttribute('class', "input")
+                input1.setAttribute('class', "input")
             }
             else if (txt.test(inputt)) {
-                inpu.classList.add('ex')
-                inpu.classList.remove('error')
+                input1.classList.add('ex')
+                input1.classList.remove('error')
             } else {
-                inpu.classList.add('error')
-                inpu.classList.remove('ex')
+                input1.classList.add('error')
+                input1.classList.remove('ex')
             }
         }
         function Test2() {
             var inputt = document.getElementById('input2').value
             if (inputt == "") {
-                input.setAttribute('class', "input bot")
+                input2.setAttribute('class', "input bot")
             }
             else if (psw.test(inputt)) {
-                input.classList.add('ex')
-                input.classList.remove('error')
+                input2.classList.add('ex')
+                input2.classList.remove('error')
             } else {
-                input.classList.add('error')
-                input.classList.remove('ex')
+                input2.classList.add('error')
+                input2.classList.remove('ex')
             }
         }
-        inpu.addEventListener("input", Test1)
-        input.addEventListener("input", Test2)
+        input1.addEventListener("input", Test1)
+        input2.addEventListener("input", Test2)
     </script>
 </body>
 </html>

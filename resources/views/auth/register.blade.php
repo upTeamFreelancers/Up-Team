@@ -108,7 +108,7 @@
             cursor: pointer;
         }
         .btn:hover {
-            border: 1px solid #000;
+            border: 2px solid #000;
         }
         .hidden {
             display: none;
@@ -258,12 +258,12 @@
             <h1 class="title">Register</h1>
             <label for="input3">Name</label>
             <input type="text" name="name" id="input3" class="input" placeholder="Enter your name">
-            <label for="input1">Email</label>
-            <input type="email" name="email" id="input1" class="input" placeholder="Enter your email">
-            <label for="input2">Password</label>
-            <input type="password" name="password" id="input2" class="input bot" placeholder="Enter your password">
-            <label for="input2">Confirm Password</label>
-            <input type="password" name="password_confirmation" id="input2" class="input bot" placeholder="Enter your password">
+            <label for="input4">Email</label>
+            <input type="email" name="email" id="input4" class="input" placeholder="Enter your email">
+            <label for="input5">Password</label>
+            <input type="password" name="password" id="input5" class="input bot" minlength="4" maxlength="4" placeholder="Enter your password">
+            <label for="input6">Confirm Password</label>
+            <input type="password" name="password_confirmation" id="input6" class="input bot" minlength="4" maxlength="4" placeholder="Enter your password">
             <button class="btn">Ok</button>
         </form>
     </div>
@@ -271,17 +271,20 @@
         var login = document.querySelector('.form_controlll')
         var register = document.querySelector('.form_controllr')
         var txt = /@/
-        var psw = /^[0-9]{4,}$/
-        var inpu = document.querySelector('#input1')
-        var input = document.querySelector('#input2')
+        var psw = /^[0-9]{4,4}$/
+        var input1 = document.querySelector('#input1')
+        var input2 = document.querySelector('#input2')
+        var input4 = document.querySelector('#input4')
+        var input5 = document.querySelector('#input5')
+        var input6 = document.querySelector('#input6')
         function T() {
-            if (inpu.value == "" && input.value == "") {
+            if (input1.value == "" && input2.value == "") {
                 alert("The email address and password is empty")
                 return false
-            } else if (inpu.value == "") {
+            } else if (input1.value == "") {
                 alert("The email address is empty")
                 return false;
-            } else if (input.value == "") {
+            } else if (input2.value == "") {
                 alert("The password is empty")
                 return false
             }
@@ -289,31 +292,73 @@
         function Test1() {
             var inputt = document.getElementById('input1').value
             if (inputt == "") {
-                inpu.setAttribute('class', "input")
+                input1.setAttribute('class', "input")
             }
             else if (txt.test(inputt)) {
-                inpu.classList.add('ex')
-                inpu.classList.remove('error')
+                input1.classList.add('ex')
+                input1.classList.remove('error')
             } else {
-                inpu.classList.add('error')
-                inpu.classList.remove('ex')
+                input1.classList.add('error')
+                input1.classList.remove('ex')
+            }
+        }
+        function Test4() {
+            var inputt = document.getElementById('input4').value
+            if (inputt == "") {
+                input4.setAttribute('class', "input")
+            }
+            else if (txt.test(inputt)) {
+                input4.classList.add('ex')
+                input4.classList.remove('error')
+            } else {
+                input4.classList.add('error')
+                input4.classList.remove('ex')
             }
         }
         function Test2() {
             var inputt = document.getElementById('input2').value
             if (inputt == "") {
-                input.setAttribute('class', "input bot")
+                input2.setAttribute('class', "input bot")
             }
             else if (psw.test(inputt)) {
-                input.classList.add('ex')
-                input.classList.remove('error')
+                input2.classList.add('ex')
+                input2.classList.remove('error')
             } else {
-                input.classList.add('error')
-                input.classList.remove('ex')
+                input2.classList.add('error')
+                input2.classList.remove('ex')
             }
         }
-        inpu.addEventListener("input", Test1)
-        input.addEventListener("input", Test2)
+        function Test5() {
+            var inputt = document.getElementById('input5').value
+            if (inputt == "") {
+                input5.setAttribute('class', "input bot")
+            }
+            else if (psw.test(inputt)) {
+                input5.classList.add('ex')
+                input5.classList.remove('error')
+            } else {
+                input5.classList.add('error')
+                input5.classList.remove('ex')
+            }
+        }
+        function Test6() {
+            var inputt = document.getElementById('input6').value
+            if (inputt == "") {
+                input6.setAttribute('class', "input bot")
+            }
+            else if (psw.test(inputt)) {
+                input6.classList.add('ex')
+                input6.classList.remove('error')
+            } else {
+                input6.classList.add('error')
+                input6.classList.remove('ex')
+            }
+        }
+        input1.addEventListener("input", Test1)
+        input2.addEventListener("input", Test2)
+        input4.addEventListener("input", Test4)
+        input5.addEventListener("input", Test5)
+        input6.addEventListener("input", Test6)
         document.addEventListener('keyup', (e) => {
             if (e.key == "r" && e.altKey) {
                 login.classList.toggle('hidden')
