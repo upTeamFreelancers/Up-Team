@@ -25,7 +25,7 @@
 <body>
     <header id="header" class="header d-flex align-items-center">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="/" class="logo d-flex align-items-center">
                 <h1>
                     @foreach($tit as $ti)
                         {{$ti->title}}
@@ -123,7 +123,7 @@
                 </div>
             </div>
             @endforeach
-            
+
         <section id="stats-counter" class="stats-counter">
             <div class="container" data-aos="fade-up">
                 <div class="row gy-4 align-items-center">
